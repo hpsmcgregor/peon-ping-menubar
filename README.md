@@ -9,9 +9,6 @@ packs straight from the menu bar.
 
 ![the peon in the menu bar](icons/peon-menubar.png)
 
-> ⚠️ The icon is the **Orc Peon from Warcraft, © Blizzard Entertainment** — it is
-> *not* our artwork. See [License & attribution](#license--attribution).
-
 - **Green dot** beside the peon — sounds are **on**.
 - **Red dot** — sounds are **muted** (paused).
 - Click the icon for a menu: mute/unmute, pick a sound pack (grouped by
