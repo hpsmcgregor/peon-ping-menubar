@@ -27,6 +27,8 @@ mkdir -p "$PLUGINS"
 cp "$REPO_DIR/plugins/peonping.10s.sh" "$PLUGINS/peonping.10s.sh"
 chmod +x "$PLUGINS/peonping.10s.sh"
 cp "$REPO_DIR/icons/peon-menubar.png" "$SB/peon-menubar.png"
+# Menu groupings config: don't clobber a user's edited copy on re-install.
+cp -n "$REPO_DIR/peonping-groups.conf" "$SB/peonping-groups.conf"
 
 echo "==> Installing optional double-click toggle command"
 mkdir -p "$HOME/Applications"

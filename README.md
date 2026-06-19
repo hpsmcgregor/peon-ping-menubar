@@ -21,6 +21,7 @@ icon survives a restart.
 |------|------------|
 | `plugins/peonping.10s.sh` | The SwiftBar plugin. Refreshes every 10s; reads peon-ping state and renders the icon + menu. |
 | `icons/peon-menubar.png` | The peon menu-bar image. |
+| `peonping-groups.conf` | Editable map of pack ids/globs → menu groups. |
 | `launchagent/com.peonping.swiftbar.plist` | LaunchAgent that opens SwiftBar at login. |
 | `Toggle Peon-Ping.command` | Optional double-click toggle for sounds (also nudges SwiftBar to refresh). |
 | `install.sh` | Copies everything into place and registers the LaunchAgent. |
@@ -51,11 +52,33 @@ icon survives a restart.
 
 This will:
 
-1. Copy `peonping.10s.sh` and `peon-menubar.png` into
-   `~/Library/Application Support/SwiftBar/`.
+1. Copy `peonping.10s.sh`, `peon-menubar.png` and `peonping-groups.conf` into
+   `~/Library/Application Support/SwiftBar/` (the config is only copied if you
+   don't already have one, so re-installing won't overwrite your edits).
 2. Copy the `Toggle Peon-Ping.command` into `~/Applications/`.
 3. Install and load the LaunchAgent so SwiftBar launches at login.
 4. Start SwiftBar and refresh.
+
+## Customising the menu groups
+
+The "Sound Pack" submenu groups packs by franchise. Those groups are **not**
+hardcoded — they're driven by `peonping-groups.conf` (installed to
+`~/Library/Application Support/SwiftBar/peonping-groups.conf`). Each line maps a
+pack id or glob to a group label:
+
+```
+tf2_*  = Team Fortress 2     # any pack whose id starts with tf2_
+peon   = Warcraft            # a single pack by id
+```
+
+- First matching line wins, so list specific ids before broad globs.
+- Group order in the menu = the order groups first appear in the file.
+- Packs that match nothing fall under **Other** (shown last).
+- If the file is missing, packs are listed flat with no group headers — so it
+  works for any pack set out of the box; the config just makes it tidier.
+
+Edit the file and the menu updates on the next refresh (≤10s, or click
+**Refresh state**).
 
 ## Uninstall
 
@@ -64,6 +87,7 @@ launchctl bootout "gui/$(id -u)/com.peonping.swiftbar"
 rm ~/Library/LaunchAgents/com.peonping.swiftbar.plist
 rm ~/Library/Application\ Support/SwiftBar/Plugins/peonping.10s.sh
 rm ~/Library/Application\ Support/SwiftBar/peon-menubar.png
+rm ~/Library/Application\ Support/SwiftBar/peonping-groups.conf
 rm ~/Applications/Toggle\ Peon-Ping.command
 ```
 
