@@ -21,7 +21,7 @@ icon survives a restart.
 |------|------------|
 | `plugins/peonping.10s.sh` | The SwiftBar plugin. Refreshes every 10s; reads peon-ping state and renders the icon + menu. |
 | `icons/peon-menubar.png` | The peon menu-bar image. |
-| `launchagent/com.cloudhouse.peonping.swiftbar.plist` | LaunchAgent that opens SwiftBar at login. |
+| `launchagent/com.peonping.swiftbar.plist` | LaunchAgent that opens SwiftBar at login. |
 | `Toggle Peon-Ping.command` | Optional double-click toggle for sounds (also nudges SwiftBar to refresh). |
 | `install.sh` | Copies everything into place and registers the LaunchAgent. |
 
@@ -60,8 +60,8 @@ This will:
 ## Uninstall
 
 ```sh
-launchctl bootout "gui/$(id -u)/com.cloudhouse.peonping.swiftbar"
-rm ~/Library/LaunchAgents/com.cloudhouse.peonping.swiftbar.plist
+launchctl bootout "gui/$(id -u)/com.peonping.swiftbar"
+rm ~/Library/LaunchAgents/com.peonping.swiftbar.plist
 rm ~/Library/Application\ Support/SwiftBar/Plugins/peonping.10s.sh
 rm ~/Library/Application\ Support/SwiftBar/peon-menubar.png
 rm ~/Applications/Toggle\ Peon-Ping.command

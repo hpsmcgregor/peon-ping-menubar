@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>Label</key>
-	<string>com.cloudhouse.peonping.swiftbar</string>
+	<string>com.peonping.swiftbar</string>
 	<key>ProgramArguments</key>
 	<array>
 		<string>/usr/bin/open</string>

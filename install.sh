@@ -13,7 +13,7 @@ REPO_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 SB="$HOME/Library/Application Support/SwiftBar"
 PLUGINS="$SB/Plugins"
 LA_DIR="$HOME/Library/LaunchAgents"
-LA_PLIST="com.cloudhouse.peonping.swiftbar.plist"
+LA_PLIST="com.peonping.swiftbar.plist"
 
 echo "==> Checking SwiftBar is installed"
 if [ ! -d "/Applications/SwiftBar.app" ]; then
@@ -37,7 +37,7 @@ echo "==> Installing launch-at-login LaunchAgent"
 mkdir -p "$LA_DIR"
 cp "$REPO_DIR/launchagent/$LA_PLIST" "$LA_DIR/$LA_PLIST"
 # Reload the agent (ignore errors if it isn't currently loaded)
-launchctl bootout "gui/$(id -u)/com.cloudhouse.peonping.swiftbar" 2>/dev/null || true
+launchctl bootout "gui/$(id -u)/com.peonping.swiftbar" 2>/dev/null || true
 launchctl bootstrap "gui/$(id -u)" "$LA_DIR/$LA_PLIST"
 
 echo "==> Launching SwiftBar and refreshing"
