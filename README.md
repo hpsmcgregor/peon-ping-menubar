@@ -1,5 +1,7 @@
 # Peon-Ping menu-bar toggle
 
+> **macOS only.** Built on the macOS menu bar, `launchd`, and SwiftBar.
+
 A [SwiftBar](https://github.com/swiftbar/SwiftBar) menu-bar icon for
 [peon-ping](https://github.com/PeonPing/peon-ping) that shows whether
 notification sounds are on or muted, and lets you toggle them and switch voice
