@@ -98,3 +98,12 @@ rm ~/Applications/Toggle\ Peon-Ping.command
   icon would. That's a SwiftBar behaviour, not something in this plugin.
 - The plugin and LaunchAgent reference paths under `$HOME`, so they work for
   any user without editing — as long as SwiftBar is at `/Applications/SwiftBar.app`.
+
+## License
+
+[MIT](LICENSE) © hpsmcgregor.
+
+The peon sounds and artwork are **not** covered by this license — they belong to
+[peon-ping](https://github.com/PeonPing/peon-ping) and its sound packs (each pack
+carries its own license, e.g. CC-BY-NC). This repo only contains the SwiftBar
+integration.
