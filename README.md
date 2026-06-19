@@ -9,6 +9,9 @@ packs straight from the menu bar.
 
 ![the peon in the menu bar](icons/peon-menubar.png)
 
+> ⚠️ The icon is the **Orc Peon from Warcraft, © Blizzard Entertainment** — it is
+> *not* our artwork. See [License & attribution](#license--attribution).
+
 - **Green dot** beside the peon — sounds are **on**.
 - **Red dot** — sounds are **muted** (paused).
 - Click the icon for a menu: mute/unmute, pick a sound pack (grouped by
@@ -22,7 +25,7 @@ icon survives a restart.
 | Path | What it is |
 |------|------------|
 | `plugins/peonping.10s.sh` | The SwiftBar plugin. Refreshes every 10s; reads peon-ping state and renders the icon + menu. |
-| `icons/peon-menubar.png` | The peon menu-bar image. |
+| `icons/peon-menubar.png` | The menu-bar image — the Warcraft Orc Peon. **Third-party artwork, not ours** ([details](#license--attribution)). |
 | `peonping-groups.conf` | Editable map of pack ids/globs → menu groups. |
 | `launchagent/com.peonping.swiftbar.plist` | LaunchAgent that opens SwiftBar at login. |
 | `Toggle Peon-Ping.command` | Optional double-click toggle for sounds (also nudges SwiftBar to refresh). |
@@ -101,11 +104,23 @@ rm ~/Applications/Toggle\ Peon-Ping.command
 - The plugin and LaunchAgent reference paths under `$HOME`, so they work for
   any user without editing — as long as SwiftBar is at `/Applications/SwiftBar.app`.
 
-## License
+## License & attribution
 
-[MIT](LICENSE) © hpsmcgregor.
+The **code** in this repo — the SwiftBar plugin, `install.sh`, the LaunchAgent,
+`peonping-groups.conf`, and the toggle command — is ours and is released under
+the [MIT license](LICENSE) © hpsmcgregor.
 
-The peon sounds and artwork are **not** covered by this license — they belong to
-[peon-ping](https://github.com/PeonPing/peon-ping) and its sound packs (each pack
-carries its own license, e.g. CC-BY-NC). This repo only contains the SwiftBar
-integration.
+**Everything else is third-party and _not_ ours:**
+
+- **Menu-bar icon** (`icons/peon-menubar.png`) — the **Orc Peon from Warcraft,
+  © Blizzard Entertainment**. Included only to identify the tool in the menu
+  bar; all rights remain with Blizzard. Swap in your own image if you prefer.
+- **Sounds / voice packs** — belong to
+  [peon-ping](https://github.com/PeonPing/peon-ping) and its packs, each under
+  its own license (e.g. CC-BY-NC). No audio is bundled in this repo.
+- **[SwiftBar](https://github.com/swiftbar/SwiftBar)** and
+  **[peon-ping](https://github.com/PeonPing/peon-ping)** — separate projects
+  with their own licenses; they are dependencies, not included here.
+
+The MIT license covers our integration code only — not the trademarks, artwork,
+or audio referenced above.
