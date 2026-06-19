@@ -1,9 +1,9 @@
 # Peon-Ping menu-bar toggle
 
 A [SwiftBar](https://github.com/swiftbar/SwiftBar) menu-bar icon for
-[peon-ping](https://github.com/) that shows whether notification sounds are on
-or muted, and lets you toggle them and switch voice packs straight from the
-menu bar.
+[peon-ping](https://github.com/PeonPing/peon-ping) that shows whether
+notification sounds are on or muted, and lets you toggle them and switch voice
+packs straight from the menu bar.
 
 ![the peon in the menu bar](icons/peon-menubar.png)
 
@@ -25,11 +25,21 @@ icon survives a restart.
 | `Toggle Peon-Ping.command` | Optional double-click toggle for sounds (also nudges SwiftBar to refresh). |
 | `install.sh` | Copies everything into place and registers the LaunchAgent. |
 
-## Requirements
+## Dependencies
 
-- macOS
-- [SwiftBar](https://github.com/swiftbar/SwiftBar) — `brew install --cask swiftbar`
-- [peon-ping](https://github.com/) installed, with its hook at
+- **macOS** (uses `launchd` and the macOS menu bar).
+- **[SwiftBar](https://github.com/swiftbar/SwiftBar)** — the menu-bar host that
+  runs this plugin. This is a hard dependency; the icon only appears while
+  SwiftBar is running. Install it with:
+
+  ```sh
+  brew install --cask swiftbar
+  ```
+
+  Tested against SwiftBar 2.x. The `install.sh` script checks for
+  `/Applications/SwiftBar.app` and aborts if it's missing.
+- **[peon-ping](https://github.com/PeonPing/peon-ping)** — the tool whose sounds
+  this toggles. Expected to be installed with its hook at
   `~/.claude/hooks/peon-ping/peon.sh` and config at
   `~/.claude/hooks/peon-ping/config.json`.
 
